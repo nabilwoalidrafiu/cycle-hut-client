@@ -13,7 +13,7 @@ const Order = () => {
     useEffect(()=>{
         fetch('https://tranquil-escarpment-83624.herokuapp.com/order?email=' + loggedInUser.email)
         .then(res => res.json())
-        .then(data => setEvents(data))
+        .then(data => {setEvents(data)})
     },[events])
     return (
         <div className='container'>

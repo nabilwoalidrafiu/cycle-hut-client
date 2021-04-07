@@ -17,7 +17,7 @@ const Checkout = () => {
 
     const handleOrder = () => {
         history.push('/order')
-        const checkOut = {...checkout, ...loggedInUser, date}
+        const checkOut = {pdId:checkout._id, name:checkout.name, price:checkout.price, imageURL:checkout.imageURL, ...loggedInUser, date}
         fetch('https://tranquil-escarpment-83624.herokuapp.com/checkout', {
             method:"POST",
             headers:{'Content-Type': 'application/json'},
